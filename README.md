@@ -5,7 +5,7 @@
 # **VisAssist**  
 > Your Accessible Transcription Assistant
 
-![VisAssist Banner](https://via.placeholder.com/1000x300.png?text=VisAssist+-+Accessible+Transcription+Assistant)
+
 
 ---
 
@@ -100,23 +100,27 @@ Follow these steps to set up **VisAssist** on your local machine:
 ```plaintext
 VisAssist/
 ├── static/
-│   ├── styles.css       # CSS for styling
-│   ├── script.js        # JavaScript for dynamic features
-│   └── assets/          # Placeholder for images or additional assets
+│   ├── styles.css        # CSS for styling the application
+│   ├── script.js         # JavaScript for dynamic features
+│   └── assets/           # Placeholder for additional assets (e.g., fonts, icons)
 ├── templates/
-│   └── index.html       # Main HTML file
-├── app.py               # Backend logic (Flask app)
-├── constant.py          # Stores API keys and configurations
-├── requirements.txt     # Python dependencies
-└── README.md            # Project documentation
+│   └── index.html        # Main HTML file for the user interface
+├── screenshots/          # Folder for project screenshots
+│   ├── homepage.png      # Screenshot of the homepage
+│   ├── darkmode.png      # Screenshot showing dark mode
+│   ├── with_transcript.png # Screenshot of the live transcript view
+├── app.py                # Backend logic and Flask server
+├── constant.py           # Stores API keys and configurations
+├── requirements.txt      # Python dependencies for the project
+├── README.md             # Project documentation and usage instructions
+└── .gitignore            # Specifies files/folders to ignore in the Git repository
 ```
-
 ---
 
 ## **🔑 Key Features in Detail**
 
 ### **Real-Time Categorical Highlighting**
-![Highlighting Example](https://via.placeholder.com/800x400.png?text=Highlighting+Categories)
+
 
 - Names, Dates, and Key Elements are automatically detected and visually formatted.
 
@@ -124,7 +128,7 @@ VisAssist/
 - **Green**: Low Noise  
 - **Yellow**: Moderate Noise  
 - **Red**: High Noise  
-![Noise Level](https://via.placeholder.com/800x400.png?text=Noise+Indicator)
+
 
 ### **Download and Analyze**
 - Export transcripts with a single click.
