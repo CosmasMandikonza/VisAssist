@@ -1,0 +1,4 @@
+Flask==2.1.1
+flask-socketio==5.2.0
+assemblyai==0.11.0
+gunicorn==20.1.0  # If deploying to production
