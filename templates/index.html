@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VisAssist - The Accessible Transcription Tool</title>
+    <title>VisAssist - Accessible Transcription Tool</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -17,14 +17,14 @@
     </header>
 
     <!-- Main Content -->
-    <main class="container">
-        <!-- Controls -->
+    <main class="main-container">
+        <!-- Controls Section -->
         <section class="controls">
             <button id="toggle-btn" class="mic-off">🎤 Start Recording</button>
             <p id="status" class="status">Press the button to start transcription</p>
         </section>
 
-        <!-- Noise Level -->
+        <!-- Noise Level Section -->
         <section class="noise-level">
             <h3>Noise Level</h3>
             <div class="noise-bar-container">
@@ -47,25 +47,21 @@
         <!-- Summary Section -->
         <section class="summary-card">
             <h2>Analysis Summary</h2>
-            <div id="transcript-summary"></div>
+            <div class="legend">
+                <h3>Highlight Categories</h3>
+                <ul class="legend-list">
+                    <li><span class="names-locations">Names, Locations, Organizations</span></li>
+                    <li><span class="dates-times">Dates and Times</span></li>
+                    <li><span class="important-keywords">Important Keywords</span></li>
+                    <li><span class="questions">Questions</span></li>
+                    <li><span class="numerical-values">Numerical Values</span></li>
+                </ul>
+            </div>
         </section>
-
-        <!-- Highlight Legend -->
-        <aside class="legend">
-            <h3>Highlight Categories</h3>
-            <ul class="legend-list">
-                <li><span class="names-locations">Names, Locations, Organizations</span></li>
-                <li><span class="dates-times">Dates and Times</span></li>
-                <li><span class="important-keywords">Important Keywords</span></li>
-                <li><span class="questions">Questions</span></li>
-                <li><span class="numerical-values">Numerical Values</span></li>
-            </ul>
-        </aside>
     </main>
 
-    <!-- Include External JavaScript -->
+    <!-- External JavaScript -->
     <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
-

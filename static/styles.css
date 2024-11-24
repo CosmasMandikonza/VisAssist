@@ -1,5 +1,3 @@
-
-
 /* General Body Styling */
 body {
     font-family: 'Arial', sans-serif;
@@ -7,6 +5,10 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -15,71 +17,51 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
-/* Search Bar */
-.search-bar {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Noise Indicator */
-.noise-indicator {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: green;
-    animation: pulse 1.5s infinite;
-}
-
-
+/* Header Styling */
 .header {
     width: 100%;
-    background-color: #ffffff; /* Light mode */
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; 
-    transition: background-color 0.3s ease-in-out;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.header.dark-mode {
-    background-color: #1e1e1e; /* Dark mode */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-.home-button {
-    font-size: 16px;
-    color: #0000ff;
-    text-decoration: none;
-    margin-right: 20px;
-    padding-left: 20px; 
-    position: absolute; 
-    left: 20px;
-}
-
-.logo {
-    height: 40px;
-    margin-right: 20px;
+.header-content {
+    text-align: center;
 }
 
 .header h1 {
     margin: 0;
-    text-align: center;
+    font-size: 2rem;
+    color: #333;
 }
 
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin-top: 20px;
+.header p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 1rem;
 }
 
+#theme-toggle {
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: #d4d4d4;
+}
+
+/* Controls Section */
 .controls {
-    margin-bottom: 20px;
-    text-align: center;
+    margin: 20px 0;
 }
 
 #toggle-btn {
@@ -88,7 +70,7 @@ body.dark-mode {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .mic-off {
@@ -105,128 +87,131 @@ body.dark-mode {
     transform: scale(1.05);
 }
 
-.transcript-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* Noise Level */
+.noise-level {
+    text-align: center;
+    margin: 20px 0;
 }
 
-.transcript {
-    width: 80%;
-    background-color: white;
-    padding: 20px;
+.noise-bar-container {
+    width: 90%;
+    max-width: 500px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px auto;
+}
+
+#noise-bar {
+    height: 100%;
+    width: 50%;
+    background-color: green;
+    transition: width 0.3s;
+}
+
+/* Transcript Section */
+.transcript-card {
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease-in-out;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 800px;
 }
 
-.transcript.dark-mode {
-    background-color: #2e2e2e;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+.transcript-card h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
 }
 
-.transcript h2 {
-    margin-top: 0;
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 #transcript-text {
     white-space: pre-wrap;
-    background-color: #f9f9f9; /* Light mode */
+    background-color: #f9f9f9;
     padding: 10px;
     border-radius: 10px;
-    height: 400px;
+    height: 200px;
     overflow-y: scroll;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
 
-#transcript-text.dark-mode {
-    background-color: #1e1e1e; /* Dark mode */
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+/* Action Buttons (Improved Design) */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.legend {
-    width: 80%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.legend.dark-mode {
-    background-color: #2e2e2e; /* Dark mode */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-.legend h3 {
-    margin-top: 0;
-}
-
-.legend p {
-    margin: 5px 0;
-}
-
-/* Highlight Categories */
-.phi {
-    color: red;
-}
-
-.names-locations {
-    background-color: lightblue;
-}
-
-.dates-times {
-    font-weight: bold;
-}
-
-.important-keywords {
-    background-color: yellow;
-}
-
-.questions {
-    font-style: italic;
-}
-
-.numerical-values {
-    color: green;
-}
-
-/* Theme Toggle Button */
-#theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
+.download-btn,
+.analyze-btn {
+    padding: 12px 25px;
+    font-size: 16px;
     border: none;
-    font-size: 20px;
+    border-radius: 8px;
     cursor: pointer;
-    color: #333; /* Light mode */
-    transition: color 0.3s ease-in-out;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#theme-toggle.dark-mode {
-    color: #e0e0e0; /* Dark mode */
+.download-btn {
+    background-color: #4caf50;
+    color: white;
 }
 
-#theme-toggle:hover {
-    transform: scale(1.2);
+.download-btn:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
-.legend {
-    width: 100%;
-    background-color: white;
-    padding: 20px;
+
+.analyze-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.analyze-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Analysis Summary Section (Improved Design) */
+.summary-card {
+    background-color: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.summary-card h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.legend {
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
 }
 
 .legend h3 {
-    margin: 0 0 15px 0;
-    font-size: 18px;
-    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .legend-list {
@@ -236,62 +221,14 @@ body.dark-mode {
 }
 
 .legend-list li {
-    margin-bottom: 10px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 5px 10px;
+    font-size: 1rem;
+    padding: 8px;
+    background-color: #eef2f7;
     border-radius: 5px;
-    background-color: #f9f9f9; /* Light background for clarity */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-}
-
-.names-locations {
-    background-color: lightblue;
-    padding: 5px;
-    border-radius: 3px;
-}
-
-.dates-times {
-    font-weight: bold;
-    padding: 5px;
-}
-
-.important-keywords {
-    background-color: yellow;
-    padding: 5px;
-    border-radius: 3px;
-}
-
-.questions {
-    font-style: italic;
-    padding: 5px;
-}
-
-.numerical-values {
-    color: green;
-    padding: 5px;
-}
-.action-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    justify-content: center;
-}
-
-.analyze-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin-bottom: 8px;
     transition: background-color 0.3s;
 }
 
-.analyze-btn:hover {
-    background-color: #0056b3;
+.legend-list li:hover {
+    background-color: #dce7f3;
 }
-
