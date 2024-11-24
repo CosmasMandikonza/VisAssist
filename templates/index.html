@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisAssist - The Accessible Transcription Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1>VisAssist</h1>
+            <p>Your Accessible Transcription Assistant</p>
+        </div>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Controls -->
+        <section class="controls">
+            <button id="toggle-btn" class="mic-off">🎤 Start Recording</button>
+            <p id="status" class="status">Press the button to start transcription</p>
+        </section>
+
+        <!-- Noise Level -->
+        <section class="noise-level">
+            <h3>Noise Level</h3>
+            <div class="noise-bar-container">
+                <div id="noise-bar" class="noise-bar"></div>
+            </div>
+            <p id="noise-level-text">Low Noise</p>
+        </section>
+
+        <!-- Transcript Section -->
+        <section class="transcript-card">
+            <h2>Live Transcript</h2>
+            <input type="text" id="search-bar" placeholder="Search transcript..." class="search-bar">
+            <pre id="transcript-text" class="transcript-display"></pre>
+            <div class="action-buttons">
+                <button id="download-btn" class="download-btn">📥 Download Transcript</button>
+                <button id="analyze-btn" class="analyze-btn">🔍 Analyze Now</button>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="summary-card">
+            <h2>Analysis Summary</h2>
+            <div id="transcript-summary"></div>
+        </section>
+
+        <!-- Highlight Legend -->
+        <aside class="legend">
+            <h3>Highlight Categories</h3>
+            <ul class="legend-list">
+                <li><span class="names-locations">Names, Locations, Organizations</span></li>
+                <li><span class="dates-times">Dates and Times</span></li>
+                <li><span class="important-keywords">Important Keywords</span></li>
+                <li><span class="questions">Questions</span></li>
+                <li><span class="numerical-values">Numerical Values</span></li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- Include External JavaScript -->
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
